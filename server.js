@@ -1,20 +1,34 @@
-require("dotenv").config();
 
 const express = require('express');
-const sequelize = require('./config/connection');
+const path = require('path');
+const exphbs = require('express-handlebars');
+const sequelize = require('./models'); 
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Define a route
+// setting handlebars
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+// set up veiws
+app.set('views', path.join(__dirname, 'views'));
+
+// connect to CSS, JavaScript from the "public" directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// middleware to handle JSON and form data
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
-// Connect to the database before starting the Express.js server
-sequelize.sync()
-  .then(() => {
-    app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
-  })
-  .catch((error) => {
-    console.error('Error syncing database:', error);
+// Define your routes here
+app.get('/', (req, res) => {
+  res.render('home', { title: 'My App' });
+});
+
+// Sync Sequelize models with the database and start the server
+sequelize.sync({ force: false }).then(() => {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
   });
+});
