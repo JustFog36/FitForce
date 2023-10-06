@@ -2,12 +2,15 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
-const sequelize = require('./models'); 
+const sequelize = require('./config/connection'); 
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
+const hbs = exphbs.create({});
 
 // setting handlebars
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // set up veiws
@@ -27,8 +30,5 @@ app.get('/', (req, res) => {
 
 // Sync Sequelize models with the database and start the server
 sequelize.sync({ force: false }).then(() => {
-  const port = process.env.PORT || 3000;
-  app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
+  app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 });
