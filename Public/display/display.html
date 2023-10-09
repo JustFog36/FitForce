@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Fit Force</title>
+</head>
+
+<body>
+ <main>
+        <section class="week-schedule">
+    <div class="day" data-day="Monday">
+        <h3>Monday</h3>
+        <p class="day-date"></p>
+        <ul class="workouts">
+            <li>Chest workout <button class="delete-workout">Delete</button></li>
+            <li>Cardio <button class="delete-workout">Delete</button></li>
+        </ul>
+    </div>
+    <div class="day" data-day="Tuesday">
+        <h3>Tuesday</h3>
+        <p class="day-date"></p>
+        <ul class="workouts">
+            <li>Legs workout <button class="delete-workout">Delete</button></li>
+            <li>Yoga <button class="delete-workout">Delete</button></li>
+        </ul>
+    </div>
+    <div class="day" data-day="Wednesday">
+        <h3>Wednesday</h3>
+        <p class="day-date"></p>
+        <ul class="workouts">
+            <li> Rowing <button class="delete-workout">Delete</button></li>
+            <li> Spin Class <button class="delete-workout">Delete</button></li>
+        </ul>
+    </div>
+    <div class="day" data-day="Thursday">
+        <h3>Thursday</h3>
+        <p class="day-date"></p>
+        <ul class="workouts">
+            <li> Running <button class="delete-workout">Delete</button></li>
+            <li>Cycling <button class="delete-workout">Delete</button></li>
+        </ul>
+    </div>
+    <div class="day" data-day="Friday">
+        <h3>Friday</h3>
+        <p class="day-date"></p>
+        <ul class="workouts">
+            <li>Boxing <button class="delete-workout">Delete</button></li>
+            <li>Swimming <button class="delete-workout">Delete</button></li>
+        </ul>
+    </div>
+</section>
+
+        <section class="add-workout">
+            <h2>Add Workout</h2>
+            <!-- <form action="/add-workout" method="POST"> -->
+                <label for="day">Select Day:</label>
+                <select name="day" id="day">
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    </select>
+                <label for="workout">Choose Workout:</label>
+                <input type="text" name="workout" id="workout" placeholder="Enter workout">
+                <button type="submit">Add Workout</button>
+            </form>
+        </section>
+         <!-- <section class="workout-link">
+            <h2>Workout Resources</h2>
+            <a href="https://example.com/workout1" target="_blank">
+                <img src="workout1.jpg" alt="Workout 1">
+            </a>
+            <a href="https://example.com/workout2" target="_blank">
+                <img src="workout2.jpg" alt="Workout 2">
+            </a>
+             Add more workout images and links as needed -->
+        </section>
+    </main> 
+     
+    
+    <footer>
+        <p>&copy; 2023 Fit Force</p>
+    </footer>
+</body>
+</html>
