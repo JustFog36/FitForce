@@ -12,9 +12,34 @@ loginForm.addEventListener('submit', (event) => {
     return;
   }
 
-  // TODO: Send a request to the server to authenticate the user
-    // If the user is authenticated, redirect them to the dashboard page
-    // Otherwise, display an error message on the page
+  fetch('/api/authenticate', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      username: 'example',
+      password: 'password'
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      // If the response is OK, redirect the user to the dashboard page
+      window.location.href = '/dashboard';
+    } else {
+      // If the response is not OK, display an error message on the page
+      const error = new Error(response.statusText);
+      error.response = response;
+      throw error;
+    }
+  })
+  .catch(error => {
+    console.error(error);
+    // Display an error message on the page
+    const errorMessage = document.createElement('p');
+    errorMessage.textContent = 'An error occurred while authenticating. Please try again later.';
+    document.body.appendChild(errorMessage);
+  });
 
 });
 
@@ -45,9 +70,34 @@ signUpForm.addEventListener('submit', (event) => {
     return;
   }
 
-  // TODO: Send a request to the server to create a new user account
-    // If the account is created successfully, redirect them to the dashboard page
-    // Otherwise, display an error message on the page
+  fetch('/api/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      username: 'example',
+      password: 'password'
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      // If the response is OK, redirect the user to the dashboard page
+      window.location.href = '/dashboard';
+    } else {
+      // If the response is not OK, display an error message on the page
+      const error = new Error(response.statusText);
+      error.response = response;
+      throw error;
+    }
+  })
+  .catch(error => {
+    console.error(error);
+    // Display an error message on the page
+    const errorMessage = document.createElement('p');
+    errorMessage.textContent = 'An error occurred while creating your account. Please try again later.';
+    document.body.appendChild(errorMessage);
+  });
 
 });
 

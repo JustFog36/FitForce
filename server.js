@@ -2,7 +2,8 @@ require("dotenv").config();
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
-const sequelize = require('./config/connection'); 
+const sequelize = require('./config/connection');
+const usersRouter = require('./routes/users');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -27,6 +28,9 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) => {
   res.render('home', { title: 'My App' });
 });
+
+// Mount the /api/users routes onto the main app object
+app.use('/api/users', usersRouter);
 
 // Sync Sequelize models with the database and start the server
 sequelize.sync({ force: false }).then(() => {
