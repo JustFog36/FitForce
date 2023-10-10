@@ -1,16 +1,30 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/User');
 
 // Define the /api/users endpoint
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   const { username, password } = req.body;
 
-  // TODO: Validate the username and password
+  // Validate the username and password
+  if (!username || !password) {
+    return res.status(400).json({ message: 'Please provide a username and password.' });
+  }
 
-  // TODO: Create a new user account in the database
+  // Check if the username already exists in the database
+  const existingUser = await User.findOne({ where: { username } });
+  if (existingUser) {
+    return res.status(409).json({ message: 'Username already exists.' });
+  }
 
-  // Send a response indicating that the account was created successfully
-  res.status(201).json({ message: 'Account created successfully.' });
+  // Create a new user account in the database
+  try {
+    const newUser = await User.create({ username, password });
+    return res.status(201).json({ message: 'Account created successfully.', user: newUser });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Internal server error.' });
+  }
 });
 
 module.exports = router;
