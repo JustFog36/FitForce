@@ -31,5 +31,35 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Store workout selections in Local Storage when the page loads
+    const workoutSelections = {};
+    dayElements.forEach(function (dayElement) {
+        const dayName = dayElement.querySelector("h3").textContent;
+        const selectedWorkout = dayElement.querySelector("input[type='radio']:checked");
+        if (selectedWorkout) {
+            workoutSelections[dayName.toLowerCase()] = selectedWorkout.value;
+        }
+    });
+    localStorage.setItem("workoutSelections", JSON.stringify(workoutSelections));
+
     updateDisplay();
+
+    const submitButton = document.getElementById("submit-workouts");
+    submitButton.addEventListener("click", function () {
+        // Create an object to store workout selections
+        const workoutSelections = {};
+
+        dayElements.forEach(function (dayElement) {
+            const dayName = dayElement.querySelector("h3").textContent;
+            const selectedWorkout = dayElement.querySelector("input[type='radio']:checked");
+            if (selectedWorkout) {
+                workoutSelections[dayName.toLowerCase()] = selectedWorkout.value;
+            }
+        });
+
+        localStorage.setItem("workoutSelections", JSON.stringify(workoutSelections));
+
+        location.href = "calendar.html";
+    });
 });
+
