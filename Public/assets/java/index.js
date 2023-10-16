@@ -24,8 +24,8 @@ loginForm.addEventListener('submit', (event) => {
   })
   .then(response => {
     if (response.ok) {
-      // If the response is OK, redirect the user to the dashboard page
-      window.location.href = '/dashboard';
+      // If the response is OK, redirect the user to the display page
+      window.location.href = '/display';
     } else {
       // If the response is not OK, display an error message on the page
       const error = new Error(response.statusText);
@@ -83,7 +83,7 @@ signUpForm.addEventListener('submit', (event) => {
   .then(response => {
     if (response.ok) {
       // If the response is OK, redirect the user to the dashboard page
-      window.location.href = '/dashboard';
+      window.location.href = '/display';
     } else {
       // If the response is not OK, display an error message on the page
       const error = new Error(response.statusText);
