@@ -13,16 +13,12 @@ const hbs = exphbs.create({});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// set up veiws
-app.set('views', path.join(__dirname, 'views'));
-
-// connect to CSS, JavaScript from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
-
 // middleware to handle JSON and form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// connect to CSS, JavaScript from the "public" directory
+app.use(express.static(path.join(__dirname, 'Public')));
 
 app.use(routes);
 
