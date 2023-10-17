@@ -8,7 +8,8 @@
             "Let your arms go back to your waist."
         ],
         "reps": 10,
-        "sets": 3
+        "sets": 3,
+        "task_id": 1
     },
     {
         "exName": "Wide Curl",
@@ -19,7 +20,8 @@
             "Let your arms go back to your waist."
         ],
         "reps": 10,
-        "sets": 2
+        "sets": 2,
+        "task_id": 1
     },
     {
         "exName": "Back Squats",
@@ -30,7 +32,8 @@
             "Squat with good form down and slowly go back up to standing position."
         ],
         "reps": 5,
-        "sets": 5
+        "sets": 5,
+        "task_id": 2
     },
     {
         "exName": "Lunge",
@@ -41,7 +44,8 @@
             "Stand back up and move leg back underneath you. Repeat with next leg."
         ],
         "reps": 10,
-        "sets": 2
+        "sets": 2,
+        "task_id": 2
     },
     {
         "exName": "Pushup",
@@ -52,7 +56,8 @@
             "Slowly bring yourself back to starting position."
         ],
         "reps": 10,
-        "sets": 3
+        "sets": 3,
+        "task_id": 3
     },
     {
         "exName": "Plank",
@@ -62,7 +67,8 @@
             "Hold yourself straight for as long as you can."
         ],
         "reps": 1,
-        "sets": 3
+        "sets": 3,
+        "task_id": 3
     },
     {
         "exName": "Pullup",
@@ -72,7 +78,8 @@
             "Pull your head above bar and slowly let yourself down."
         ],
         "reps": 10,
-        "sets": 3
+        "sets": 3,
+        "task_id": 4
     },
     {
         "exName": "Kettle bell Swing",
@@ -83,7 +90,8 @@
             "level with shoulders. Let it fall back and stop it between legs."
         ],
         "reps": 15,
-        "sets": 2
+        "sets": 2,
+        "task_id": 4
     },
     {
         "exName": "Renegade Row",
@@ -93,7 +101,8 @@
             "Pull one hand up to chest with dumbbell, then return to ground. Do next hand."
         ],
         "reps": 10,
-        "sets": 3
+        "sets": 3,
+        "task_id": 5
     },
     {
         "exName": "Band Front Raise",
@@ -104,6 +113,7 @@
             "until level with shoulders. Slowly drop hands back to waist."
         ],
         "reps": 15,
-        "sets": 3
+        "sets": 3,
+        "task_id": 5
     }
 ]

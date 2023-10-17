@@ -8,7 +8,7 @@ const taskData = require('./taskData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  await Users.bulkCreate(userData, {
+ const users = await Users.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
@@ -20,8 +20,7 @@ const seedDatabase = async () => {
 
   for (const exercises of exerciseData) {
     await Exercise.create({
-      ...exercises,
-      task_id: tasks[Math.floor(Math.random() * tasks.length)].id,
+      ...exercises
     });
   }
 
