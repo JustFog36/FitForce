@@ -1,16 +1,27 @@
 const router = require('express').Router();
 const path = require('path');
+const User = require('../../models/users');
 
 router.get('/', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
   res.render('main');
 });
 
+router.post('/', (req, res) =>{
+  User.create(req.body)
+    .then((newUser) => {
+      res.json(newUser)
+    })
+    .catch((err) => {
+      res.json(err)
+    })
+})
+
 module.exports = router;
 
 
 
-// const User = require('../../models/users');
+
 
 
 

@@ -72,7 +72,7 @@ const signUpFormHelper =  async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('../weeklyWorkout.html');
     } else {
       // If the response is not OK, display an error message on the page
       const error = new Error(response.statusText);
