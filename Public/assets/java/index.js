@@ -21,8 +21,8 @@ const loginFormHelper = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+      // If successful, redirect the browser to the weeklyWorkout page
+      document.location.replace('/weeklyWorkout');
     } else {
       // If the response is not OK, display an error message on the page
       const error = new Error(response.statusText);
@@ -72,7 +72,7 @@ const signUpFormHelper =  async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('../weeklyWorkout.html');
+      document.location.replace('/weeklyWorkout');
     } else {
       // If the response is not OK, display an error message on the page
       const error = new Error(response.statusText);
