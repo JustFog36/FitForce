@@ -1,0 +1,109 @@
+[
+    {
+       "exName": "Biceps Curl",
+        "equipment": "dumbbells: varying weigths according to streangth",
+        "trainerTips": [
+            "Start with your hands by your waist with dumbbells in both hands.",
+            "Lift your arms to your shoulders, keeping your arms steady.",
+            "Let your arms go back to your waist."
+        ],
+        "reps": 10,
+        "sets": 3
+    },
+    {
+        "exName": "Wide Curl",
+        "equipment": "dumbbells: varying weigths according to streangth",
+        "trainerTips": [
+            "Start with your hands by your waist with dumbbells in both hands.",
+            "Lift your arms outwards till both are level with your shoulder.",
+            "Let your arms go back to your waist."
+        ],
+        "reps": 10,
+        "sets": 2
+    },
+    {
+        "exName": "Back Squats",
+        "equipment": "Barbell: varying weight according to your streangth",
+        "trainerTips": [
+            "Rest barbell on shoulders behind head and stand up",
+            "with feet spread apart to shoulder distance.",
+            "Squat with good form down and slowly go back up to standing position."
+        ],
+        "reps": 5,
+        "sets": 5
+    },
+    {
+        "exName": "Lunge",
+        "equipment": "dumbbells: varying weigths according to streangth",
+        "trainerTips": [
+            "Hold Dumbbells in both hands and stand upright with your hands to your sides.",
+            "Move one leg one step forward and bend down till your knee is bent to 90 degrees.",
+            "Stand back up and move leg back underneath you. Repeat with next leg."
+        ],
+        "reps": 10,
+        "sets": 2
+    },
+    {
+        "exName": "Pushup",
+        "equipment": "none",
+        "trainerTips": [
+            "Lay on floor with tips of toes and both hands touching ground.",
+            "Push yourself up with your arms till arms are stright.",
+            "Slowly bring yourself back to starting position."
+        ],
+        "reps": 10,
+        "sets": 3
+    },
+    {
+        "exName": "Plank",
+        "equipment": "none",
+        "trainerTips": [
+            "Lay on floor with tips of toes and both elbows touching ground.",
+            "Hold yourself straight for as long as you can."
+        ],
+        "reps": 1,
+        "sets": 3
+    },
+    {
+        "exName": "Pullup",
+        "equipment": "Some bar to hang on",
+        "trainerTips": [
+            "Hang on bar with both hands and feet off of floor.",
+            "Pull your head above bar and slowly let yourself down."
+        ],
+        "reps": 10,
+        "sets": 3
+    },
+    {
+        "exName": "Kettle bell Swing",
+        "equipment": "Kettle bell: varying weight according to streangth",
+        "trainerTips": [
+            "Spread legs to shoulder leangth apart and pick up kettle bell",
+            "between legs. Swing back a little and swing bell forward till",
+            "level with shoulders. Let it fall back and stop it between legs."
+        ],
+        "reps": 15,
+        "sets": 2
+    },
+    {
+        "exName": "Renegade Row",
+        "equipment": "dumbbells: varying weigths according to streangth",
+        "trainerTips": [
+            "Start in pushup position, but with dumbbells in hands against ground.",
+            "Pull one hand up to chest with dumbbell, then return to ground. Do next hand."
+        ],
+        "reps": 10,
+        "sets": 3
+    },
+    {
+        "exName": "Band Front Raise",
+        "equipment": "Rubber exercise bands",
+        "trainerTips": [
+            "Hold hands at waist with a band in both hands. The other sides",
+            "of the bands should be on a foot. Extend hands in front of you",
+            "until level with shoulders. Slowly drop hands back to waist."
+        ],
+        "reps": 15,
+        "sets": 3
+    }
+]

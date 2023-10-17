@@ -1,5 +1,6 @@
 const Task = require('./task');
 const Exercise = require('./exercise');
+const Users = require('./users');
 
 Task.hasMany(Exercise, {
   foreignKey: 'task_id',
@@ -10,4 +11,4 @@ Exercise.belongsTo(Task, {
   foreignKey: 'task_id'
 });
 
-module.exports = { Task, Exercise };
+module.exports = { Task, Exercise, Users };

@@ -1,5 +1,7 @@
-
 const Sequelize = require('sequelize');
-const URI = process.env.MYSQLURI
+require('dotenv').config();
+
+const URI = process.env.MYSQLURI;
 const sequelize = new Sequelize(URI);
+
 module.exports = sequelize;
