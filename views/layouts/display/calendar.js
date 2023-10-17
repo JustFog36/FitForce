@@ -4,6 +4,21 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleAddEvents() {
         const eventForm = document.getElementById("event-form");
         eventForm.style.display = "block";
+
+        
+        const addEventsButton = document.getElementById("add-events");
+        const eventFormRect = eventForm.getBoundingClientRect();
+        const buttonRect = addEventsButton.getBoundingClientRect();
+
+        eventForm.style.top = buttonRect.bottom + "px";
+        eventForm.style.left = (buttonRect.left + buttonRect.width / 2 - eventFormRect.width / 2) + "px";
+    }
+
+    function closePopup() {
+        const eventForm = document.getElementById("event-form");
+        eventForm.style.display = "none";
+        const eventInput = document.getElementById("event-input");
+        eventInput.value = "";
     }
 
     function handleSaveEvent() {
@@ -18,16 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (dayBox.textContent.trim() === "") {
                 dayBox.textContent = eventText;
             } else {
-                // Add a line break between events
                 dayBox.innerHTML += "<br>" + eventText;
             }
         }
 
-        const eventForm = document.getElementById("event-form");
-        eventForm.style.display = "none";
-        eventInput.value = "";
+        closePopup(); // Close the pop-up menu after saving
 
-        // Store events with line breaks in local storage
         storedSelections[selectedDay] = dayBox.innerHTML;
         localStorage.setItem("workoutSelections", JSON.stringify(storedSelections));
     }
@@ -41,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (const day in storedSelections) {
         const dayBox = document.getElementById(`${day}-box`);
         if (dayBox) {
-            // Set the innerHTML to restore line breaks
+            dayBox.classList.add("box");
             dayBox.innerHTML = storedSelections[day];
         }
     }
