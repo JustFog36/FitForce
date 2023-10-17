@@ -6,7 +6,7 @@ body, h1, h2, h3, ul, li {
 
 
 .background-container {
-    background-image: url('./assets/istockphoto-845970122-170667a.webp'); 
+    background-image: url('./istockphoto-845970122-170667a.webp'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed; 
