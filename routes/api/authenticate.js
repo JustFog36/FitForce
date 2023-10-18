@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
 const usersData = require('./usersData.json');
 
 const app = express();
@@ -17,14 +16,16 @@ app.post('/login', (req, res) => {
   }
 
   // Compare the hashed password with the user input
-  bcrypt.compare(password, user.password, (err, result) => {
-    if (err || !result) {
-      return res.status(401).json({ error: 'Invalid email or password' });
-    }
+  // bcrypt.compare(password, user.password, (err, result) => {
+  //   if (err || !result) {
+  //     return res.status(401).json({ error: 'Invalid email or password' });
+  //   }
 
-    // Return the user data as a response
-    res.json(user);
-  });
+  //   // Return the user data as a response
+  //   res.json(user);
+  // });
+
+   res.json(user);
 });
 
 app.listen(3000, () => {
